@@ -9,6 +9,15 @@
   "scripts": {
     "test": "jest"
   },
+  "keywords": [
+    "next.js",
+    "next",
+    "plugins",
+    "environment",
+    "dotenv",
+    "runtime",
+    "configuration"
+  ],
   "dependencies": {
     "dotenv": "^5.0.1"
   },
