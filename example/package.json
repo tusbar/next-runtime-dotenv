@@ -1,0 +1,13 @@
+{
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "latest",
+    "next-runtime-dotenv": "latest",
+    "react": "latest",
+    "react-dom": "latest"
+  }
+}
