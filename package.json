@@ -1,6 +1,6 @@
 {
   "name": "next-runtime-dotenv",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Expose environment variables to the runtime config of Next.js",
   "main": "index.js",
   "license": "MIT",
