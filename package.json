@@ -45,6 +45,9 @@
   "xo": {
     "semicolon": false,
     "space": 2,
+    "ignores": [
+      "example/**"
+    ],
     "overrides": [
       {
         "files": "__tests__/**/*.js",

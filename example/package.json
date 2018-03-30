@@ -11,6 +11,5 @@
     "next-runtime-dotenv": "latest",
     "react": "latest",
     "react-dom": "latest"
-  },
-  "xo": false
+  }
 }
