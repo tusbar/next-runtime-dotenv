@@ -83,6 +83,9 @@ jobs:
           name: Run tests
           command: yarn test
 
+      - store_test_results:
+          path: reports/tests/
+
       - run:
           name: Upload code coverage to codecov
           command: yarn codecov
