@@ -1,0 +1,48 @@
+{
+  "name": "next-runtime-dotenv",
+  "version": "0.1.0",
+  "description": "Expose environment variables to the runtime config of Next.js",
+  "main": "index.js",
+  "license": "MIT",
+  "repository": "git@github.com:tusbar/next-runtime-dotenv.git",
+  "author": "Bertrand Marron <bertrand.marron@gmail.com>",
+  "scripts": {
+    "test": "jest"
+  },
+  "dependencies": {
+    "dotenv": "^5.0.1"
+  },
+  "peerDependencies": {
+    "next": ">= 5.1.0"
+  },
+  "devDependencies": {
+    "codecov": "^3.0.0",
+    "jest": "^22.4.3",
+    "jest-junit": "^3.6.0",
+    "next": "^5.1.0",
+    "xo": "^0.20.3"
+  },
+  "jest": {
+    "collectCoverage": true,
+    "coverageReporters": [
+      "lcov",
+      "text-summary"
+    ],
+    "testResultsProcessor": "jest-junit"
+  },
+  "jest-junit": {
+    "output": "reports/tests/junit.xml"
+  },
+  "xo": {
+    "semicolon": false,
+    "space": 2,
+    "overrides": [
+      {
+        "files": "__tests__/**/*.js",
+        "envs": [
+          "jest"
+        ]
+      }
+    ]
+  }
+}
