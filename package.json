@@ -27,20 +27,25 @@
   "devDependencies": {
     "codecov": "^3.0.0",
     "jest": "^23.0.1",
-    "jest-junit": "^5.0.0",
+    "jest-junit": "^5.1.0",
     "next": "^5.1.0",
     "xo": "^0.21.0"
   },
   "jest": {
+    "reporters": [
+      "default",
+      [
+        "jest-junit",
+        {
+          "output": "reports/tests/junit.xml"
+        }
+      ]
+    ],
     "collectCoverage": true,
     "coverageReporters": [
       "lcov",
       "text-summary"
-    ],
-    "testResultsProcessor": "jest-junit"
-  },
-  "jest-junit": {
-    "output": "reports/tests/junit.xml"
+    ]
   },
   "xo": {
     "semicolon": false,
