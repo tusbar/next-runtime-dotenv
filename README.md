@@ -2,10 +2,10 @@
 
 > Expose environment variables to the runtime config of Next.js
 
-[![npm version](https://img.shields.io/npm/v/next-runtime-dotenv.svg)](https://www.npmjs.com/package/next-runtime-dotenv)
-[![dependencies Status](https://david-dm.org/tusbar/next-runtime-dotenv/status.svg)](https://david-dm.org/tusbar/next-runtime-dotenv)
-[![codecov](https://codecov.io/gh/tusbar/next-runtime-dotenv/branch/master/graph/badge.svg)](https://codecov.io/gh/tusbar/next-runtime-dotenv)
-[![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo)
+[![npm version](https://badgen.net/npm/v/next-runtime-dotenv)](https://www.npmjs.com/package/next-runtime-dotenv)
+[![dependencies Status](https://badgen.net/david/dep/tusbar/next-runtime-dotenv)](https://david-dm.org/tusbar/next-runtime-dotenv)
+[![codecov](https://badgen.net/codecov/c/github/tusbar/next-runtime-dotenv)](https://codecov.io/gh/tusbar/next-runtime-dotenv)
+[![XO code style](https://badgen.net/badge/code%20style/XO/cyan)](https://github.com/xojs/xo)
 
 ## Getting started
 
