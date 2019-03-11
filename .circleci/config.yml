@@ -7,7 +7,7 @@ defaults:
   nodejs_container: &nodejs_container
     working_directory: *workspace_root
     docker:
-      - image: circleci/node:8-stretch
+      - image: circleci/node:10-stretch
 
   filters: &default_filters
     tags:
@@ -21,8 +21,8 @@ defaults:
     restore_cache:
       name: Restore node_modules cache
       keys:
-        - v1-next-runtime-dotenv-node-{{ checksum "yarn.lock" }}
-        - v1-next-runtime-dotenv-node-
+        - v2-next-runtime-dotenv-node-{{ checksum "yarn.lock" }}
+        - v2-next-runtime-dotenv-node-
 
 jobs:
   checkout:
@@ -44,8 +44,8 @@ jobs:
       - restore_cache:
           name: Restore yarn cache
           keys:
-            - v1-next-runtime-dotenv-yarn-{{ checksum "yarn.lock" }}
-            - v1-next-runtime-dotenv-yarn-
+            - v2-next-runtime-dotenv-yarn-{{ checksum "yarn.lock" }}
+            - v2-next-runtime-dotenv-yarn-
 
       - run:
           name: Install dependencies
@@ -53,13 +53,13 @@ jobs:
 
       - save_cache:
           name: Save yarn cache
-          key: v1-next-runtime-dotenv-yarn-{{ checksum "yarn.lock" }}
+          key: v2-next-runtime-dotenv-yarn-{{ checksum "yarn.lock" }}
           paths:
             - ~/.cache/yarn/
 
       - save_cache:
           name: Save node_modules cache
-          key: v1-next-runtime-dotenv-node-{{ checksum "yarn.lock" }}
+          key: v2-next-runtime-dotenv-node-{{ checksum "yarn.lock" }}
           paths:
             - node_modules/
 
