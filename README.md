@@ -40,6 +40,31 @@ module.exports = withConfig({
 })
 ```
 
+Then in your page, use the configuration values as such:
+
+```js
+import getConfig from 'next/config'
+
+const {
+  publicRuntimeConfig: {MY_API_URL},  // Available both client and server side
+  serverRuntimeConfig: {GITHUB_TOKEN} // Only available server side
+} = getConfig()
+
+function HomePage() {
+  // Will display the variable on the server’s console
+  // Will display undefined into the browser’s console
+  console.log(GITHUB_TOKEN)
+
+  return (
+    <div>
+      My API URL is {MY_API_URL}
+    </div>
+  )
+}
+
+export default HomePage
+```
+
 ## Phases
 
 This plugin leverages `next@5.1.0` and build phases. It exposes a plugin function in order to run the plugin only when running the server (`PHASE_DEVELOPMENT_SERVER` and `PHASE_PRODUCTION_SERVER`).
