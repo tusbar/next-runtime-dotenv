@@ -26,7 +26,7 @@
   },
   "devDependencies": {
     "codecov": "^3.0.0",
-    "jest": "^24.0.0",
+    "jest": "^24.4.0",
     "jest-junit": "^6.0.1",
     "next": "^8.0.3",
     "xo": "^0.24.0"
