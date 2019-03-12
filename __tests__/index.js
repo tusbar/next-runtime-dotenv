@@ -99,4 +99,18 @@ describe('tests', () => {
       VAR2: 'hi'
     })
   })
+
+  it('should throw for serverless deployments', () => {
+    const withConfig = nextRuntimeDotenv({
+      server: [
+        'VAR1'
+      ]
+    })
+
+    expect(() => {
+      withConfig({
+        target: 'serverless'
+      })()
+    }).toThrow('next-runtime-dotenv is not compatible with serverless deployment.')
+  })
 })
