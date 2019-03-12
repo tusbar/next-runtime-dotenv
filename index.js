@@ -27,6 +27,13 @@ module.exports = opts => {
       config = config(phase, args)
     }
 
+    if (config.target === 'serverless') {
+      throw new Error(`next-runtime-dotenv is not compatible with serverless deployment.
+       \`publicRuntimeConfig\` and \`serverRuntimeConfig\` will not be exposed, you should use the \`env\` key.
+       See https://github.com/zeit/next.js#build-time-configuration.
+      `)
+    }
+
     if (phase === PHASE_PRODUCTION_SERVER || phase === PHASE_DEVELOPMENT_SERVER) {
       dotenv.config({
         path: opts.path

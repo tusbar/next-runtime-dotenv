@@ -65,6 +65,11 @@ function HomePage() {
 export default HomePage
 ```
 
+## Serverless deployment
+
+This module is not compatible with serverless deployment as `publicRuntimeConfig` and `serverRuntimeConfig` from `next/config` will not be exposed.
+You should use [build-time configuration](https://github.com/zeit/next.js#build-time-configuration).
+
 ## Phases
 
 This plugin leverages `next@5.1.0` and build phases. It exposes a plugin function in order to run the plugin only when running the server (`PHASE_DEVELOPMENT_SERVER` and `PHASE_PRODUCTION_SERVER`).
