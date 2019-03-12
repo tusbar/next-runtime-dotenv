@@ -1,5 +1,5 @@
 const dotenv = require('dotenv')
-const {PHASE_DEVELOPMENT_SERVER, PHASE_PRODUCTION_SERVER} = require('next/constants')
+const {PHASE_DEVELOPMENT_SERVER, PHASE_PRODUCTION_SERVER, PHASE_PRODUCTION_BUILD} = require('next/constants')
 
 function exposeKeys(keys) {
   if (!Array.isArray(keys)) {
@@ -27,7 +27,7 @@ module.exports = opts => {
       config = config(phase, args)
     }
 
-    if (config.target === 'serverless') {
+    if (config.target === 'serverless' && phase === PHASE_PRODUCTION_BUILD) {
       throw new Error(`next-runtime-dotenv is not compatible with serverless deployment.
        \`publicRuntimeConfig\` and \`serverRuntimeConfig\` will not be exposed, you should use the \`env\` key.
        See https://github.com/zeit/next.js#build-time-configuration.

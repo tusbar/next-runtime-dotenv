@@ -1,5 +1,5 @@
 const nextRuntimeDotenv = require('..')
-const {PHASE_DEVELOPMENT_SERVER, PHASE_PRODUCTION_SERVER} = require('next/constants')
+const {PHASE_DEVELOPMENT_SERVER, PHASE_PRODUCTION_SERVER, PHASE_PRODUCTION_BUILD} = require('next/constants')
 
 describe('tests', () => {
   it('should expose a plugin function', () => {
@@ -110,7 +110,21 @@ describe('tests', () => {
     expect(() => {
       withConfig({
         target: 'serverless'
-      })()
+      })(PHASE_PRODUCTION_BUILD)
     }).toThrow('next-runtime-dotenv is not compatible with serverless deployment.')
+  })
+
+  it('should not throw for serverless deployments in dev server', () => {
+    const withConfig = nextRuntimeDotenv({
+      server: [
+        'VAR1'
+      ]
+    })
+
+    expect(() => {
+      withConfig({
+        target: 'serverless'
+      })(PHASE_DEVELOPMENT_SERVER)
+    }).not.toThrow()
   })
 })
