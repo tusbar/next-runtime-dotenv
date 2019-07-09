@@ -39,7 +39,7 @@ module.exports = opts => {
         path: opts.path
       })
 
-      return ({
+      return {
         ...config,
 
         serverRuntimeConfig: {
@@ -50,9 +50,13 @@ module.exports = opts => {
           ...config.publicRuntimeConfig,
           ...exposeKeys(opts.public)
         }
-      })
+      }
     }
 
-    return config
+    return {
+      serverRuntimeConfig: {},
+      publicRuntimeConfig: {},
+      ...config
+    }
   }
 }

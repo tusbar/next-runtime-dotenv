@@ -47,7 +47,7 @@ describe('tests', () => {
 
     const config = withConfig()('unknown-phase')
 
-    expect(config.publicRuntimeConfig).toBeUndefined()
+    expect(config.publicRuntimeConfig).toEqual({})
   })
 
   it('should preserve existing runtime configuration', () => {
