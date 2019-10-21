@@ -1,5 +1,5 @@
-const nextRuntimeDotenv = require('..')
 const {PHASE_DEVELOPMENT_SERVER, PHASE_PRODUCTION_SERVER, PHASE_PRODUCTION_BUILD} = require('next/constants')
+const nextRuntimeDotenv = require('..')
 
 describe('tests', () => {
   it('should expose a plugin function', () => {
