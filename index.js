@@ -13,13 +13,13 @@ function exposeKeys(keys) {
   }, {})
 }
 
-module.exports = opts => {
-  opts = {
+module.exports = options => {
+  options = {
     path: '.env',
     server: [],
     public: [],
 
-    ...opts
+    ...options
   }
 
   return (config = {}) => (phase, args) => {
@@ -36,7 +36,7 @@ module.exports = opts => {
 
     if (phase === PHASE_PRODUCTION_SERVER || phase === PHASE_DEVELOPMENT_SERVER) {
       dotenv.config({
-        path: opts.path
+        path: options.path
       })
 
       return {
@@ -44,11 +44,11 @@ module.exports = opts => {
 
         serverRuntimeConfig: {
           ...config.serverRuntimeConfig,
-          ...exposeKeys(opts.server)
+          ...exposeKeys(options.server)
         },
         publicRuntimeConfig: {
           ...config.publicRuntimeConfig,
-          ...exposeKeys(opts.public)
+          ...exposeKeys(options.public)
         }
       }
     }
