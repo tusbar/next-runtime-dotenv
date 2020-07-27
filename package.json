@@ -53,6 +53,9 @@
     "ignores": [
       "example/**"
     ],
+    "rules": {
+      "unicorn/no-reduce": "off"
+    },
     "overrides": [
       {
         "files": "__tests__/**/*.js",
