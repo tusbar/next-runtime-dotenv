@@ -9135,9 +9135,9 @@ xmlchars@^2.2.0:
   integrity sha512-JZnDKK8B0RCDw84FNdDAIpZK+JuJw+s7Lz8nksI7SIuU3UXJJslUthsi+uWBUYOwPFwW7W7PRLRfUKpxjtjFCw==
 
 xo@^0.33.0:
-  version "0.33.0"
-  resolved "https://registry.yarnpkg.com/xo/-/xo-0.33.0.tgz#cd8125ed84ed0414f592cbe20bd3edd93862b877"
-  integrity sha512-9fUpHn9w2trvZSatInPfscwQVO3f60nXcTelg4GV6u0/+aqx3DPEdEliWFN7cmtUUf8sofZH3Itjg8Txnvzv3A==
+  version "0.33.1"
+  resolved "https://registry.yarnpkg.com/xo/-/xo-0.33.1.tgz#b198027a429a5c171ebcac8e81d77789ab9c5e91"
+  integrity sha512-kH/qjKzvhkXPRwFnf4WpiGb2509eyk1J1791Jtxpr7LlGiGtOtSo5PQpHaUrvRusAbAv967wGMBtG48j3eGLQA==
   dependencies:
     "@typescript-eslint/eslint-plugin" "^3.9.0"
     "@typescript-eslint/parser" "^3.9.0"
