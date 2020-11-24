@@ -4,7 +4,7 @@
   "description": "Expose environment variables to the runtime config of Next.js",
   "main": "index.js",
   "license": "MIT",
-  "repository": "git@github.com:tusbar/next-runtime-dotenv.git",
+  "repository": "https://github.com/tusbar/next-runtime-dotenv",
   "author": "Bertrand Marron <bertrand.marron@gmail.com>",
   "scripts": {
     "test": "jest"
