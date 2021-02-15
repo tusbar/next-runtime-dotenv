@@ -7,7 +7,7 @@ defaults:
   nodejs_container: &nodejs_container
     working_directory: *workspace_root
     docker:
-      - image: circleci/node:12-stretch
+      - image: cimg/node:lts
 
   filters: &default_filters
     tags:
@@ -21,8 +21,8 @@ defaults:
     restore_cache:
       name: Restore node_modules cache
       keys:
-        - v3-next-runtime-dotenv-node-{{ checksum "yarn.lock" }}
-        - v3-next-runtime-dotenv-node-
+        - v4-next-runtime-dotenv-node-{{ checksum "yarn.lock" }}
+        - v4-next-runtime-dotenv-node-
 
 jobs:
   checkout:
@@ -41,25 +41,13 @@ jobs:
       - *attach_workspace
       - *restore_node_modules
 
-      - restore_cache:
-          name: Restore yarn cache
-          keys:
-            - v3-next-runtime-dotenv-yarn-{{ checksum "yarn.lock" }}
-            - v3-next-runtime-dotenv-yarn-
-
       - run:
           name: Install dependencies
           command: yarn --frozen-lockfile
 
       - save_cache:
-          name: Save yarn cache
-          key: v3-next-runtime-dotenv-yarn-{{ checksum "yarn.lock" }}
-          paths:
-            - ~/.cache/yarn/
-
-      - save_cache:
           name: Save node_modules cache
-          key: v3-next-runtime-dotenv-node-{{ checksum "yarn.lock" }}
+          key: v4-next-runtime-dotenv-node-{{ checksum "yarn.lock" }}
           paths:
             - node_modules/
 
