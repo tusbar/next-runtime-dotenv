@@ -21,8 +21,8 @@ defaults:
     restore_cache:
       name: Restore node_modules cache
       keys:
-        - v3-next-runtime-dotenv-node-{{ checksum "yarn.lock" }}
-        - v3-next-runtime-dotenv-node-
+        - v4-next-runtime-dotenv-node-{{ checksum "yarn.lock" }}
+        - v4-next-runtime-dotenv-node-
 
 jobs:
   checkout:
@@ -47,7 +47,7 @@ jobs:
 
       - save_cache:
           name: Save node_modules cache
-          key: v3-next-runtime-dotenv-node-{{ checksum "yarn.lock" }}
+          key: v4-next-runtime-dotenv-node-{{ checksum "yarn.lock" }}
           paths:
             - node_modules/
 
