@@ -54,7 +54,7 @@
       "example/**"
     ],
     "rules": {
-      "unicorn/no-reduce": "off"
+      "unicorn/no-array-reduce": "off"
     },
     "overrides": [
       {
