@@ -7,7 +7,11 @@
   "repository": "https://github.com/tusbar/next-runtime-dotenv",
   "author": "Bertrand Marron <bertrand.marron@gmail.com>",
   "scripts": {
+    "preinstall": "npx only-allow pnpm",
     "test": "jest"
+  },
+  "engines": {
+    "pnpm": "6.x"
   },
   "keywords": [
     "next.js",
@@ -25,23 +29,21 @@
     "next": ">= 5.1.0"
   },
   "devDependencies": {
-    "codecov": "^3.0.0",
+    "@bizon/semantic-release-config": "^1.0.1",
     "jest": "^26.0.1",
     "jest-junit": "^12.0.0",
-    "next": "^11.0.1",
+    "next": "^11.1.1",
+    "semantic-release": "^17.4.7",
     "xo": "^0.38.2"
   },
   "jest": {
     "reporters": [
-      "default",
-      [
-        "jest-junit",
-        {
-          "outputDirectory": "reports/tests"
-        }
-      ]
+      "default"
     ],
     "collectCoverage": true,
+    "collectCoverageFrom": [
+      "index.js"
+    ],
     "coverageReporters": [
       "lcov",
       "text-summary"
@@ -64,5 +66,8 @@
         ]
       }
     ]
+  },
+  "release": {
+    "extends": "@bizon/semantic-release-config"
   }
 }
