@@ -1,3 +1,5 @@
+const process = require('process')
+
 const dotenv = require('dotenv')
 const {PHASE_DEVELOPMENT_SERVER, PHASE_PRODUCTION_SERVER, PHASE_PRODUCTION_BUILD} = require('next/constants')
 
@@ -6,11 +8,7 @@ function exposeKeys(keys) {
     throw new TypeError('The `server` and `public` keys should be arrays of env variables to expose')
   }
 
-  return keys.reduce((acc, key) => {
-    acc[key] = process.env[key]
-
-    return acc
-  }, {})
+  return Object.fromEntries(keys.map(key => [key, process.env[key]]))
 }
 
 module.exports = options => {
@@ -19,7 +17,7 @@ module.exports = options => {
     server: [],
     public: [],
 
-    ...options
+    ...options,
   }
 
   return (config = {}) => (phase, args) => {
@@ -36,7 +34,7 @@ module.exports = options => {
 
     if (phase === PHASE_PRODUCTION_SERVER || phase === PHASE_DEVELOPMENT_SERVER) {
       dotenv.config({
-        path: options.path
+        path: options.path,
       })
 
       return {
@@ -44,19 +42,19 @@ module.exports = options => {
 
         serverRuntimeConfig: {
           ...config.serverRuntimeConfig,
-          ...exposeKeys(options.server)
+          ...exposeKeys(options.server),
         },
         publicRuntimeConfig: {
           ...config.publicRuntimeConfig,
-          ...exposeKeys(options.public)
-        }
+          ...exposeKeys(options.public),
+        },
       }
     }
 
     return {
       serverRuntimeConfig: {},
       publicRuntimeConfig: {},
-      ...config
+      ...config,
     }
   }
 }
