@@ -1,10 +1,15 @@
-# next-runtime-dotenv [![CircleCI](https://circleci.com/gh/tusbar/next-runtime-dotenv.svg?style=svg)](https://circleci.com/gh/tusbar/next-runtime-dotenv)
+# next-runtime-dotenv
 
 > Expose environment variables to the runtime config of Next.js
 
 [![npm version](https://badgen.net/npm/v/next-runtime-dotenv)](https://www.npmjs.com/package/next-runtime-dotenv)
 [![codecov](https://badgen.net/codecov/c/github/tusbar/next-runtime-dotenv)](https://codecov.io/gh/tusbar/next-runtime-dotenv)
 [![XO code style](https://badgen.net/badge/code%20style/XO/cyan)](https://github.com/xojs/xo)
+
+## CI
+
+[![Tests](https://github.com/tusbar/next-runtime-dotenv/actions/workflows/tests.yml/badge.svg)](https://github.com/tusbar/next-runtime-dotenv/actions/workflows/tests.yml)
+[![Release](https://github.com/tusbar/next-runtime-dotenv/actions/workflows/release.yml/badge.svg)](https://github.com/tusbar/next-runtime-dotenv/actions/workflows/release.yml)
 
 ## Getting started
 
