@@ -1,3 +1,5 @@
+const process = require('process')
+
 const {PHASE_DEVELOPMENT_SERVER, PHASE_PRODUCTION_SERVER, PHASE_PRODUCTION_BUILD} = require('next/constants')
 const nextRuntimeDotenv = require('..')
 
@@ -13,8 +15,8 @@ describe('tests', () => {
 
     const withConfig = nextRuntimeDotenv({
       public: [
-        'FOO'
-      ]
+        'FOO',
+      ],
     })
 
     for (const phase of [PHASE_DEVELOPMENT_SERVER, PHASE_PRODUCTION_SERVER]) {
@@ -27,8 +29,8 @@ describe('tests', () => {
   it('should fail if public or server is not an array', () => {
     const withConfig = nextRuntimeDotenv({
       public: {
-        an: 'object'
-      }
+        an: 'object',
+      },
     })
 
     const f = () => withConfig()(PHASE_DEVELOPMENT_SERVER)
@@ -41,8 +43,8 @@ describe('tests', () => {
 
     const withConfig = nextRuntimeDotenv({
       public: [
-        'FOO'
-      ]
+        'FOO',
+      ],
     })
 
     const config = withConfig()('unknown-phase')
@@ -55,19 +57,19 @@ describe('tests', () => {
 
     const withConfig = nextRuntimeDotenv({
       server: [
-        'FOO'
-      ]
+        'FOO',
+      ],
     })
 
     const config = withConfig({
       serverRuntimeConfig: {
-        test: 'keep me'
-      }
+        test: 'keep me',
+      },
     })(PHASE_DEVELOPMENT_SERVER)
 
     expect(config.serverRuntimeConfig).toEqual({
       test: 'keep me',
-      FOO: 'hello'
+      FOO: 'hello',
     })
   })
 
@@ -77,39 +79,39 @@ describe('tests', () => {
 
     const withConfig1 = nextRuntimeDotenv({
       server: [
-        'VAR1'
-      ]
+        'VAR1',
+      ],
     })
 
     const withConfig2 = nextRuntimeDotenv({
       server: [
-        'VAR2'
-      ]
+        'VAR2',
+      ],
     })
 
     const config = withConfig2(withConfig1({
       serverRuntimeConfig: {
-        VAR0: 'yo'
-      }
+        VAR0: 'yo',
+      },
     }))(PHASE_DEVELOPMENT_SERVER)
 
     expect(config.serverRuntimeConfig).toEqual({
       VAR0: 'yo',
       VAR1: 'hello',
-      VAR2: 'hi'
+      VAR2: 'hi',
     })
   })
 
   it('should throw for serverless deployments', () => {
     const withConfig = nextRuntimeDotenv({
       server: [
-        'VAR1'
-      ]
+        'VAR1',
+      ],
     })
 
     expect(() => {
       withConfig({
-        target: 'serverless'
+        target: 'serverless',
       })(PHASE_PRODUCTION_BUILD)
     }).toThrow('next-runtime-dotenv is not compatible with serverless deployment.')
   })
@@ -117,13 +119,13 @@ describe('tests', () => {
   it('should not throw for serverless deployments in dev server', () => {
     const withConfig = nextRuntimeDotenv({
       server: [
-        'VAR1'
-      ]
+        'VAR1',
+      ],
     })
 
     expect(() => {
       withConfig({
-        target: 'serverless'
+        target: 'serverless',
       })(PHASE_DEVELOPMENT_SERVER)
     }).not.toThrow()
   })

@@ -56,7 +56,7 @@
       "example/**"
     ],
     "rules": {
-      "unicorn/no-array-reduce": "off"
+      "unicorn/prefer-module": "off"
     },
     "overrides": [
       {
