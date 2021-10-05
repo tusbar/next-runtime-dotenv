@@ -7,11 +7,7 @@
   "repository": "https://github.com/tusbar/next-runtime-dotenv",
   "author": "Bertrand Marron <bertrand.marron@gmail.com>",
   "scripts": {
-    "preinstall": "npx only-allow pnpm",
     "test": "jest"
-  },
-  "engines": {
-    "pnpm": "6.x"
   },
   "keywords": [
     "next.js",

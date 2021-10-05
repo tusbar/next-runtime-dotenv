@@ -14,22 +14,17 @@ jobs:
       - name: Git checkout
         uses: actions/checkout@v2
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v2.0.1
-        with:
-          version: 6
-
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
           node-version: 14
-          cache: pnpm
+          cache: yarn
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile --prefer-offline
+        run: yarn --frozen-lockfile --non-interactive --prefer-offline
 
       - name: Run linter
-        run: pnpm xo
+        run: yarn xo
 
   test:
     name: Run tests
@@ -39,22 +34,17 @@ jobs:
       - name: Git checkout
         uses: actions/checkout@v2
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v2.0.1
-        with:
-          version: 6
-
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
           node-version: 14
-          cache: pnpm
+          cache: yarn
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile --prefer-offline
+        run: yarn --frozen-lockfile --non-interactive --prefer-offline
 
       - name: Run tests
-        run: pnpm test -- --ci --reporters=default --reporters=jest-junit --forceExit
+        run: yarn test --ci --reporters=default --reporters=jest-junit --forceExit
         env:
           JEST_JUNIT_OUTPUT_DIR: ./reports/tests/
 
