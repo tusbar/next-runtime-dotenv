@@ -30,7 +30,7 @@
     "jest-junit": "^13.0.0",
     "next": "^11.1.1",
     "semantic-release": "^18.0.0",
-    "xo": "^0.45.0"
+    "xo": "^0.46.3"
   },
   "jest": {
     "reporters": [
