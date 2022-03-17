@@ -19,7 +19,7 @@
     "configuration"
   ],
   "dependencies": {
-    "dotenv": "^15.0.0"
+    "dotenv": "^16.0.0"
   },
   "peerDependencies": {
     "next": ">= 5.1.0"
