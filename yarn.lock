@@ -571,9 +571,9 @@
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
 "@bizon/semantic-release-config@^1.0.1":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@bizon/semantic-release-config/-/semantic-release-config-1.1.0.tgz#b25aedd3e3ef264305e08f490fb75950747f2689"
-  integrity sha512-wE/f5Et8HOxco9cKYV0mqB7Cl8fisBFMrJ2QcY/BfQtusW7m9PjmLtKvrLd9Jhjr4KupWkkpUHiGWHBeuBap7w==
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@bizon/semantic-release-config/-/semantic-release-config-1.2.0.tgz#80e2f9eaf29226aed41eb0dcd9aad7b7cbdc4114"
+  integrity sha512-aq3EYwAaXU5K3z5fSu6uCSwqj9wrHmlSEtwvf1RrElG9joOk7cIIe6FSrHbwlxKQ4CWiAataEqqfQrM7Ni13fA==
   dependencies:
     "@semantic-release/git" "^10.0.0"
 
