@@ -44,16 +44,7 @@ jobs:
         run: yarn --frozen-lockfile --non-interactive --prefer-offline
 
       - name: Run tests
-        run: yarn test --ci --reporters=default --reporters=jest-junit --forceExit
-        env:
-          JEST_JUNIT_OUTPUT_DIR: ./reports/tests/
-
-      - name: Upload jest junit test results
-        uses: actions/upload-artifact@v3
-        if: success() || failure()
-        with:
-          name: jest-test-results
-          path: reports/tests/junit.xml
+        run: yarn test --ci --forceExit --reporters=default --reporters=github-actions
 
       - name: Upload code coverage to codecov
         uses: codecov/codecov-action@v3
