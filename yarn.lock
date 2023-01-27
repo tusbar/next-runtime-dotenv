@@ -587,10 +587,10 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@bizon/semantic-release-config@^1.0.1":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@bizon/semantic-release-config/-/semantic-release-config-1.2.0.tgz#80e2f9eaf29226aed41eb0dcd9aad7b7cbdc4114"
-  integrity sha512-aq3EYwAaXU5K3z5fSu6uCSwqj9wrHmlSEtwvf1RrElG9joOk7cIIe6FSrHbwlxKQ4CWiAataEqqfQrM7Ni13fA==
+"@bizon/semantic-release-config@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@bizon/semantic-release-config/-/semantic-release-config-2.0.0.tgz#9f850032b002800ef4e6c3148ca7bd7b64134d41"
+  integrity sha512-rfF5FXfjUqQviTE5OHe1Gicmx2XcJSy0y10t87USCH0HptQzdbtfM8J9InjzcO4vGPzQOXKVKKChKhBPZ8+lMQ==
   dependencies:
     "@semantic-release/git" "^10.0.0"
 
